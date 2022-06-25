@@ -34,12 +34,11 @@ N = 500
 def getDataPoint(quote):
     """
     Produce all of the needed values to generate a datapoint
-    ------------- Update this function -------------
     """
     stock = quote['stock']
     bid_price = float(quote['top_bid']['price'])
     ask_price = float(quote['top_ask']['price'])
-    price = bid_price
+    price = bid_price + ask_price/2
     return stock, bid_price, ask_price, price
 
 
@@ -49,7 +48,7 @@ def getRatio(price_a, price_b):
     ------------- Update this function -------------
     Also create some unit tests for this function in client_test.py 
     """
-    return 1
+    return price_a / price_b
 
 
 # Main
